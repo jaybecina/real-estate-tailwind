@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-white-100 px-16 lg:px-48 py-20">
+    <section class="max-w-full mb-10 lg:mb-14">
+        <h2 class="lg:text-3xl text-2xl font-bold mb-6">Find Real Estate Properties in Cambodia</h2> 
+    </section>
+
+    <section class="flex-row items-center mb-4 space-x-4">
+      <div class="grid lg:grid-cols-3 lg:gap-4">
+          <div class="mb-3">
+              <label class="block mb-2 text-gray-400" for="input1">Search Keywords</label>
+              <div class="relative block w-full">
+                  <input
+                      class="w-[100%] bg-white font-semibold text-cyan-600 placeholder:font-italic border border-gray-300 drop-shadow-md rounded-md pl-4 pr-4 py-2 focus:outline-none"
+                      placeholder="Enter your keyword to search" type="text" 
+                  />
+      
+                  <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                  </span>
+              </div>
+          </div>
+      
+          <div class="mb-3">
+              <label class="block mb-2 text-gray-400" for="input3">Property Type</label>
+              <div class="relative inline-block w-full">
+                  <button id="dropdownBtnProperty" class="block w-full bg-white text-left font-semibold text-cyan-600 rounded-lg px-4 py-2 pr-8 appearance-none placeholder-cyan-600 placeholder-opacity-50 border border-gray-300 drop-shadow-md focus:outline-none">
+                    Residential
+                  </button>
+                  <ul id="dropdownMenuProperty" class="absolute w-full hidden right-0 mt-0 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+                    <li class="py-2 px-4 hover:bg-gray-100 cursor-pointer">Option 1</li>
+                    <li class="py-2 px-4 hover:bg-gray-100 cursor-pointer">Option 2</li>
+                    <li class="py-2 px-4 hover:bg-gray-100 cursor-pointer">Option 3</li>
+                  </ul>
+                  <div class="pointer-events-none absolute top-[12px] right-[10px] flex items-center px-2 text-gray-700">
+                      <i class="fas fa-chevron-down"></i>
+                  </div>
+              </div>
+          </div>
+      
+          <div class="mb-3">
+              <label class="block mb-2 text-gray-400" for="input3">Transaction Type</label>
+              <div class="relative inline-block w-full">
+                  <button id="dropdownBtnTransaction" class="block w-full bg-white text-left font-semibold text-cyan-600 rounded-lg px-4 py-2 pr-8 appearance-none placeholder-cyan-600 placeholder-opacity-50 border border-gray-300 drop-shadow-md focus:outline-none">
+                    Rent
+                  </button>
+                  <ul id="dropdownMenuTransaction" class="absolute w-full hidden right-0 mt-0 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+                    <li class="py-2 px-4 hover:bg-gray-100 cursor-pointer">Option 1</li>
+                    <li class="py-2 px-4 hover:bg-gray-100 cursor-pointer">Option 2</li>
+                    <li class="py-2 px-4 hover:bg-gray-100 cursor-pointer">Option 3</li>
+                  </ul>
+                  <div class="pointer-events-none absolute top-[12px] right-[10px] flex items-center px-2 text-gray-700">
+                      <i class="fas fa-chevron-down"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="mb-4">
+        <div class="grid lg:grid-cols-7 lg:gap-4">
+            <div class="flex flex-wrap gap-1 lg:justify-left lg:col-span-5">
+                <!-- Active Chips -->
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-cyan-200 border border-cyan-600 text-cyan-600">
+                    Residential
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-cyan-200 border border-cyan-600 text-cyan-600">
+                    Rent
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-cyan-200 border border-cyan-600 text-cyan-600">
+                    1 Bedroom
+                </div>
+                
+                <!-- Non-Active Chips -->
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    BKK2
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    BKK3
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    Balcony
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    Cleaning Service
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    Security
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    Parking
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    Garden
+                </div>
+                <div class="flex items-center justify-center px-4 py-2 m-2 font-semibold rounded-full bg-white border border-gray-300 text-gray-500">
+                    Surrounding Area
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 flex sm:justify-end px-2 gap-4 mt-2">
+                <div class="mt-[13px]">
+                    <p class="font-semibold text-cyan-600">Clear Filter</p>
+                </div>
+                <div>
+                    <button class="px-4 py-2 m-2 border border-gray-300 bg-white font-semibold text-gray-600 rounded hover:bg-white-100 focus:outline-none">
+                        More Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="flex justify-end p-4">
+            <button class="h-[50px] w-[50px] bg-white text-gray-600 font-bold py-2 px-4 rounded">
+              <i class="fas fa-bars text-2xl mr-2"></i> 
+            </button>
+          
+            <button class="h-[50px] bg-white text-gray-600 font-s font-bold py-2 px-4 rounded ml-4">
+                <i class="fas fa-th text-2xl"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="w-full shadow-lg rounded-lg mb-[20px]">
+              <div class="relative">
+                <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                <span class="absolute top-[20px] right-[20px] bg-red-600 text-white rounded-md p-2">URGENT SALE</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+
+                <div class="flex items-center space-x-4 my-2">
+                    <div class="flex items-center p-2 rounded-full">
+                      <i class="fas fa-bed text-gray-600 text-xl"></i>
+                      <span class="ml-2 text-right text-gray-600">1</span>
+                    </div>
+                
+                    <div class="flex items-center p-2 rounded-full">
+                      <i class="fas fa-bath text-gray-600 text-xl"></i>
+                      <span class="ml-2 text-right text-gray-600">4</span>
+                    </div>
+                
+                    <div class="flex items-center p-2 rounded-full">
+                      <i class="fas fa-copy text-gray-600 text-xl"></i>
+                      <span class="ml-2 text-right text-gray-600">180 m²</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between my-4">
+                    <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                    <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="w-full shadow-lg rounded-lg mb-[20px]">
+                <div class="relative">
+                  <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                  <!-- <span class="absolute top-[20px] right-[20px] bg-red-600 text-white rounded-md p-2">URGENT SALE</span> -->
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+    
+                    <div class="flex items-center space-x-4 my-2">
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bed text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">1</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bath text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">4</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-copy text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">180 m²</span>
+                        </div>
+                    </div>
+    
+                    <div class="flex justify-between my-4">
+                      <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                      <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full shadow-lg rounded-lg mb-[20px]">
+                <div class="relative">
+                  <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                  <!-- <span class="absolute top-[20px] right-[20px] bg-red-600 text-white rounded-md p-2">URGENT SALE</span> -->
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+    
+                    <div class="flex items-center space-x-4 my-2">
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bed text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">1</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bath text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">4</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-copy text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">180 m²</span>
+                        </div>
+                    </div>
+    
+                    <div class="flex justify-between my-4">
+                      <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                      <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full shadow-lg rounded-lg mb-[20px]">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                    <span class="absolute top-[20px] right-[20px] bg-cyan-600 text-white rounded-md p-2">URGENT SALE</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+    
+                    <div class="flex items-center space-x-4 my-2">
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bed text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">1</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bath text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">4</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-copy text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">180 m²</span>
+                        </div>
+                    </div>
+    
+                    <div class="flex justify-between my-4">
+                      <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                      <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full shadow-lg rounded-lg mb-[20px]">
+                <div class="relative">
+                  <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                  <!-- <span class="absolute top-[20px] right-[20px] bg-red-600 text-white rounded-md p-2">URGENT SALE</span> -->
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+    
+                    <div class="flex items-center space-x-4 my-2">
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bed text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">1</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bath text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">4</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-copy text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">180 m²</span>
+                        </div>
+                    </div>
+    
+                    <div class="flex justify-between my-4">
+                      <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                      <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+              </div>
+          
+              <div class="w-full shadow-lg rounded-lg mb-[20px]">
+                  <div class="relative">
+                    <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                    <!-- <span class="absolute top-[20px] right-[20px] bg-red-600 text-white rounded-md p-2">URGENT SALE</span> -->
+                  </div>
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+    
+                    <div class="flex items-center space-x-4 my-2">
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bed text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">1</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bath text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">4</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-copy text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">180 m²</span>
+                        </div>
+                    </div>
+    
+                    <div class="flex justify-between my-4">
+                      <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                      <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="w-full shadow-lg rounded-lg mb-[20px]">
+                  <div class="relative">
+                    <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                    <span class="absolute top-[20px] right-[20px] bg-cyan-600 text-white rounded-md p-2">UNDERMARKET</span>
+                  </div>
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+    
+                    <div class="flex items-center space-x-4 my-2">
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bed text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">1</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bath text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">4</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-copy text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">180 m²</span>
+                        </div>
+                    </div>
+    
+                    <div class="flex justify-between my-4">
+                      <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                      <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="w-full shadow-lg rounded-lg mb-[20px]">
+                  <div class="relative">
+                      <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Card Image" class="w-full h-[200px] object-cover rounded-t-lg">
+                      <!-- <span class="absolute top-[20px] right-[20px] bg-cyan-600 text-white rounded-md p-2">URGENT SALE</span> -->
+                  </div>
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold leading-tight text-gray-600">11th Floor 1 Bedroom Condo For Sale-Embassy Residences, Phnom Penh</h3>
+    
+                    <div class="flex items-center space-x-4 my-2">
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bed text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">1</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-bath text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">4</span>
+                        </div>
+                    
+                        <div class="flex items-center p-2 rounded-full">
+                          <i class="fas fa-copy text-gray-600 text-xl"></i>
+                          <span class="ml-2 text-right text-gray-600">180 m²</span>
+                        </div>
+                    </div>
+    
+                    <div class="flex justify-between my-4">
+                      <button class="bg-cyan-800 text-white px-4 py-2 rounded-xl file:drop-shadow-md focus:outline-none">$150,000</button>
+                      <button class="bg-white text-gray-600 px-4 py-2 rounded-xl drop-shadow-md focus:outline-none">More Info</button>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+
+    <script>
+        document.getElementById("dropdownBtnProperty").addEventListener("click", function() {
+            document.getElementById("dropdownMenuProperty").classList.toggle("hidden");
+        });
+
+        document.getElementById("dropdownBtnTransaction").addEventListener("click", function() {
+            document.getElementById("dropdownMenuTransaction").classList.toggle("hidden");
+        });
+
+        // // Close the dropdown menu if clicked outside of it
+        window.addEventListener("click", function(event) {
+            const dropdownMenuProperty = document.getElementById("dropdownMenuProperty");
+            if (!event.target.matches("#dropdownBtnProperty") && !event.target.closest("#dropdownMenuProperty")) {
+                dropdownMenuProperty.classList.add("hidden");
+            }
+
+            const dropdownMenuTransaction = document.getElementById("dropdownMenuProperty");
+            if (!event.target.matches("#dropdownBtnProperty") && !event.target.closest("#dropdownMenuProperty")) {
+                dropdownMenuTransaction.classList.add("hidden");
+            }
+        });
+    </script>
+</body>
+</html>
